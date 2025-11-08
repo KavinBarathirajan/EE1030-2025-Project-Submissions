@@ -1,0 +1,20 @@
+\documentclass{article}
+\usepackage{booktabs}
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\begin{document}
+\begin{table}[htbp]
+  \centering
+  \caption{Greyscale Reconstruction Error Analysis}
+  \label{tab:greyscale_error}
+  \begin{tabular}{ccc}
+    \toprule
+    \textbf{k} & \textbf{Frobenius Norm} & \textbf{Percentage Error (\%)} \\
+    \midrule
+    5          & 10992.299278            & 5.6790                \\
+    20         & 3525.721393             & 1.8215                \\
+    50         & 1040.807945             & 0.5377                \\
+    100        & 523.337708              & 0.2704                \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\end{document}

@@ -1,0 +1,20 @@
+\documentclass{article}
+\usepackage{booktabs}
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\begin{document}
+\begin{table}[H]
+  \centering
+  \caption{Globe Reconstruction Error Analysis}
+  \label{tab:color_error}
+  \begin{tabular}{ccc}
+    \toprule
+    \textbf{k} & \textbf{Frobenius Norm} & \textbf{Percentage Error (\%)} \\
+    \midrule
+    5          & 20500.294336            & 12.9492               \\
+    20         & 10530.550051            & 6.6518                \\
+    50         & 6123.277645             & 3.8678                \\
+    100        & 3676.958940             & 2.3226                \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\end{document}

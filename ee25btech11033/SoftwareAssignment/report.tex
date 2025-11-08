@@ -1,0 +1,423 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
+%\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}     % Set the distance between the header box and the top of the text
+
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{float}
+\usepackage{standalone}
+\usepackage{booktabs}
+% \usepackage{gvv}                           
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[overlay, remember picture]
+    \draw[line width=1pt]
+         ($ (current page.north west) + (1cm,-1cm) $)
+         rectangle
+         ($ (current page.south east) + (-1cm,1cm) $);
+  \end{tikzpicture}%
+}
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\begin{document}
+\begin{titlepage}
+    \centering 
+    \vspace*{2cm}
+    {\Huge \textbf{ SOFTWARE ASSIGNMENT - IMAGE COMPRESSION USING TRUNCATED SVD }\par}
+    \vspace{1cm}
+    \vfill
+    {\Large KAVIN B\par}
+    \vspace{0.5cm}
+    {ROLL NO: EE25BTECH11033 \par}
+    \vfill
+\end{titlepage}
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+\linespread{1.3}
+
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\setlength{\intextsep}{10pt} % Space between text and floats
+
+\section{INTRODUCTION}
+This project implements image compression using Singular Value Decomposition (SVD).In this context, a grayscale image is represented as a matrix $\vec{A} \in \mathbb{R}^{m \times n}$, where each entry $a_{ij}$ corresponds to a pixel's intensity (ranging from 0 for black to 255 for white).\\
+\bigskip
+
+The primary objectives of this project are to implement this truncated SVD algorithm, reconstruct images using varying values of $k$ (e.g., 5, 20, 50, 100), and quantitatively analyze the quality of compression by computing the approximation error using the Frobenius norm ($\norm{\vec{A}-\vec{A}_k}_F$).
+
+\section{THEORY}
+The fundamental principle relied upon is that SVD can factorize this image matrix into three components: $\vec{A} = \vec{U}\vec{\Sigma} \vec{V}^T$, where 
+\begin{itemize}
+    \item $\vec{U}$ and $\vec{V}$ are orthogonal matrices 
+    \item $\vec{\Sigma}$ is a diagonal matrix containing singular values in decreasing order
+\end{itemize}\\
+\bigskip
+
+By retaining only the top $k$ singular values, we can generate a low-rank approximation of the original image, defined as $\vec{A}_k = \vec{U}_k\vec{\Sigma}_k \vec{V}^T_k$. This technique forms the basis of image compression, as it often allows for the preservation of the majority of the image's visual content while significantly reducing the amount of data required to store it.
+
+\section{SUMMARY OF STRANG'S VIDEO}
+
+\subsection{Concept}
+SVD is described as the "final and best" factorization for \textit{any} matrix $\vec{A}$ (whether rectangular or square). It factorizes matrix $\vec{A}$ into three specific components:
+\begin{align}
+\vec{A} = \vec{U} \vec{\Sigma} \vec{V}^T
+\end{align}
+where:
+\begin{itemize}
+    \item \textbf{$\vec{U}$} is an orthogonal matrix whose columns ($u_i$) form an orthonormal basis for the \textbf{column space}.
+    \item \textbf{$\vec{\Sigma}$} is a diagonal matrix containing non-negative \textbf{singular values} ($\sigma_i \geq 0$).
+    \item \textbf{$\vec{V}^T$} is the transpose of an orthogonal matrix $\vec{V}$, whose columns ($v_i$) form an orthonormal basis for the \textbf{row space}.
+\end{itemize}
+Unlike eigenvalue decomposition for symmetric matrices ($\vec{A} = \vec{Q} \vec{\Lambda} \vec{Q}^T$), SVD applies to all matrices by utilizing \textit{two different} orthogonal bases, $\vec{U}$ and $\vec{V}$.
+
+\subsection{Geometric Interpretation}
+The geometric goal of SVD is to find specific orthonormal bases for the row and column spaces such that the matrix $\vec{A}$ acts purely as a "stretcher" (scaling) without any rotation between these bases. The fundamental relationship is:
+\begin{align}
+\vec{A} v_i = \sigma_i u_i
+\end{align}
+Matrix $\vec{A}$ maps a basis vector from the row space ($v_i$) to a scaled basis vector in the column space ($\sigma_i u_i$).
+
+\subsection{Computation Method}
+The components $\vec{U}$, $\vec{\Sigma}$, and $\vec{V}$ are found using symmetric positive (semi) definite matrices:
+\begin{enumerate}
+    \item \textbf{Finding $\vec{V}$ and $\vec{\Sigma}$}: Compute $\vec{A}^T \vec{A}$.
+    \begin{align}
+    \vec{A}^T \vec{A} = (\vec{V} \vec{\Sigma}^T \vec{U}^T)(\vec{U} \vec{\Sigma} \vec{V}^T) = \vec{V} \vec{\Sigma}^2 \vec{V}^T
+    \end{align}
+    \begin{itemize}
+        \item The eigenvectors of $\vec{A}^T \vec{A}$ are the columns of \textbf{$\vec{V}$}.
+        \item The square roots of the eigenvalues of $\vec{A}^T \vec{A}$ are the \textbf{singular values ($\sigma_i$)} in $\vec{\Sigma}$.
+    \end{itemize}
+    \item \textbf{Finding $\vec{U}$}: Compute $\vec{A} \vec{A}^T$.
+    \begin{align}
+    \vec{A} \vec{A}^T = (\vec{U} \vec{\Sigma} \vec{V}^T)(\vec{V} \vec{\Sigma}^T \vec{U}^T) = \vec{U} \vec{\Sigma}^2 \vec{U}^T
+    \end{align}
+    \begin{itemize}
+        \item The eigenvectors of $\vec{A} \vec{A}^T$ are the columns of \textbf{$\vec{U}$}.
+    \end{itemize}
+\end{enumerate}
+
+\subsection{The Four Fundamental Subspaces}
+SVD perfectly aligns with the four fundamental subspaces of a matrix:
+\begin{itemize}
+    \item The first $r$ columns of $\vec{V}$ (where $r$ is the rank) form the basis for the \textbf{row space}.
+    \item The remaining columns of $\vec{V}$ form the basis for the \textbf{null space} (corresponding to $\sigma_i = 0$).
+    \item The first $r$ columns of $\vec{U}$ form the basis for the \textbf{column space}.
+    \item The remaining columns of $\vec{U}$ form the basis for the \textbf{left null space}.
+\end{itemize}
+
+\section{IMPLEMENTED ALGORITHM}
+\subsection*{JACOBI METHOD}
+The Jacobi method is an iterative algorithm used to find the eigenvalues and eigenvectors of a real symmetric matrix $\vec{A}$. The core idea is to apply a sequence of orthogonal similarity transformations (Givens rotations) to systematically annihilate the off-diagonal elements.
+
+\subsection{Transformation to a Symmetric Problem}
+Standard SVD works on any rectangular matrix $\vec{A}$ (height $\times$ width). However, the Jacobi algorithm specifically requires a \textbf{square, symmetric matrix}.
+\begin{itemize}
+    \item \textbf{Action:} We compute $\vec{B} = \vec{A}^T \vec{A}$.
+    \item \textbf{Reason:} The resulting matrix $\vec{B}$ is guaranteed to be square (width $\times$ width) and symmetric. Crucially, it shares the same "right" singular vectors ($\vec{V}$) as the original image $\vec{A}$, and its eigenvalues are the squared singular values ($\sigma^2$) of $\vec{A}$.
+\end{itemize}
+
+\subsection{The Jacobi "Annihilation" Strategy}
+This is the core engine designed to turn the dense matrix $\vec{B}$ into a diagonal matrix.
+\begin{enumerate}
+    \item \textbf{Find the largest off-diagonal element:} In every iteration, the algorithm searches the entire matrix to find the largest off-diagonal element $B_{pq}$.
+    \item \textbf{Rotate it away:} A \textbf{Givens Rotation} is applied, affecting only rows/columns $p$ and $q$. This rotation is mathematically designed to be exactly the angle required to make that specific $B_{pq}$ zero.
+    \item \textbf{Repeat:} By repeatedly attacking the largest remaining element, the matrix inevitably converges to a diagonal state.
+\end{enumerate}
+The values finally left on the diagonal are the eigenvalues (importance scores), and the accumulated rotations form the eigenvectors ($\vec{V}$).
+
+\subsection{Extracting SVD Components}
+Once Jacobi converges, we possess $\vec{V}$ and the eigenvalues ($\lambda_i$). The remaining SVD components are derived as follows:
+\begin{itemize}
+    \item \textbf{Singular Values ($\vec{\Sigma}$):} Calculated as the square root of the eigenvalues found by Jacobi: $\sigma_i = \sqrt{\lambda_i}$.
+    \item \textbf{Left Singular Vectors ($\vec{U}$):} These represent the "vertical" patterns in the image, computed using the relationship:
+    \begin{enumerate}
+    \item Start with $\vec{A} = \vec{U} \vec{\Sigma} \vec{V}^T$.
+    \item Multiply both sides by $\vec{V}$ on the right:
+    \begin{align}
+        \vec{A}\vec{V} = \vec{U}\vec{\Sigma}\vec{V}^T\vec{V}
+    \end{align}
+    \item Since $\vec{V}$ is orthogonal ($\vec{V}^T\vec{V} = \vec{I}$):
+    \begin{align}
+        \vec{A}\vec{V} = \vec{U}\vec{\Sigma}
+    \end{align}
+    \item To isolate $\vec{U}$, multiply by the inverse of $\vec{\Sigma}$ (which is just dividing by the singular values because $\vec{\Sigma}$ is diagonal):
+    \begin{align}
+        \vec{U} = \vec{A}\vec{V}\vec{\Sigma}^{-1}
+    \end{align}
+\end{enumerate}
+    For an individual column vector $\vec{u}_j$ (the $j$-th column of $\vec{U}$), this formula simplifies to:
+\begin{equation}
+    \vec{u}_j = \frac{1}{\sigma_j} \vec{A} \vec{v}_j
+\end{equation}
+Where $\vec{v}_j$ is the $j$-th column of $\vec{V}$ and $\sigma_j$ is the $j$-th singular value.
+\end{itemize}
+
+\subsection{Image Compression (Truncation)}
+Perfectly reconstructing the image requires all $N$ singular values. However, the first few larger singular values typically contain the main structure (shapes, shadows), while smaller ones contain noise or fine texture.
+\begin{itemize}
+    \item \textbf{Action:} We retain only the top $k$ (e.g., 50) singular values and their corresponding vectors.
+    \item \textbf{Reconstruction:} The approximate compressed image is built using only these top $k$ components:
+    \begin{equation}
+        \vec{A}_{approx} = \sum_{i=1}^{k} \sigma_i \vec{u}_i \vec{v}_i^T
+    \end{equation}
+\end{itemize}
+
+
+\section{COMPARISON OF DIFFERENT ALGORITHMS}
+\subsection{Jacobi Algorithm}
+This is the method implemented in the this project. It iteratively applies Givens rotations to zero out off-diagonal elements.
+\begin{itemize}
+    \item \textbf{Pros:} Extremely accurate, especially for small singular values. Inherently parallelizable.
+    \item \textbf{Cons:} Very slow for large general matrices compared to modern methods, typically requiring many sweeps through the entire matrix.
+\end{itemize}
+
+\subsection{Power Iteration}
+A simple iterative method primarily used to find the dominant eigenvalue (the one with the largest absolute value) and its corresponding eigenvector.
+\begin{itemize}
+    \item \textbf{Mechanism:} Starts with a random vector $v_0$ and iteratively computes $v_{k+1} = Av_k$ (normalizing at each step) until it converges to the dominant eigenvector.
+    \item \textbf{Pros:} Very simple to implement. Useful when only the single largest eigenvalue is needed (e.g., Google's original PageRank algorithm). Memory-efficient for sparse matrices as it only requires matrix-vector multiplication.
+    \item \textbf{Cons:} Only finds one eigenvalue at a time. Convergence can be very slow if the top two eigenvalues are close in magnitude. Does not work well if the dominant eigenvalue is not unique (e.g., complex conjugate pairs).
+\end{itemize}
+
+\subsection{Golub-Kahan-Reinsch (Bidiagonalization + QR)}
+The historical "gold standard" for dense matrix SVD (often found in standard libraries like LAPACK's \texttt{dgesvd}).
+\begin{itemize}
+    \item \textbf{Mechanism:} Reduces the dense matrix to \textbf{bidiagonal form} using Householder reflections, then applies the QR algorithm to find singular values.
+    \item \textbf{Pros:} Very stable, robust, and reliable.
+    \item \textbf{Cons:} Slower than Divide and Conquer for very large matrices.
+\end{itemize}
+
+\subsection{Divide and Conquer}
+The modern default for many high-performance dense linear algebra libraries (e.g., LAPACK's \texttt{dgesdd}).
+\begin{itemize}
+    \item \textbf{Mechanism:} Splits the matrix into smaller subproblems, solves them recursively, and "glues" the answers back together.
+    \item \textbf{Pros:} Significantly faster (often 2x-4x) than Golub-Kahan for large matrices by exploiting highly optimized BLAS Level 3 operations.
+    \item \textbf{Cons:} Requires more workspace memory than QR.
+\end{itemize}
+
+\subsection{Randomized SVD (rSVD)}
+A modern class of algorithms ideal for huge data (e.g., machine learning) where only the top $k$ singular values are needed (truncated SVD).
+\begin{itemize}
+    \item \textbf{Mechanism:} Multiplies the huge matrix $\vec{A}$ by a random matrix $\vec{\Omega}$ to get a smaller representative matrix $\vec{Y}$. SVD is then computed on this smaller matrix.
+    \item \textbf{Pros:} Extremely fast for huge matrices; requires fewer passes over data.
+    \item \textbf{Cons:} It is an \textbf{approximation}. It might miss very small singular values, but is usually highly accurate for dominant ones.
+\end{itemize}
+
+
+\newpage
+\section{RECONSTRUCTED IMAGES}
+
+\subsection{EINSTEIN}
+
+\textbf{Original Image}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\linewidth]{figs/einstein.jpg}
+\end{figure}\\
+\bigskip
+
+\textbf{Reconstructed Images:}
+\\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\linewidth]{figs/einstein_5.jpg}
+\end{figure}
+\begin{center}
+    k=5
+\end{center}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\linewidth]{figs/einstein_20.jpg}
+\end{figure}
+\begin{center}
+    k=20
+\end{center}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\linewidth]{figs/einstein_50.jpg}
+\end{figure}
+\begin{center}
+    k=50
+\end{center}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\linewidth]{figs/einstein_100.jpg}
+\end{figure}
+\begin{center}
+    k=100
+\end{center}
+
+\subsection{GLOBE}
+
+\textbf{Original Image}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\linewidth]{figs/globe.jpg}
+\end{figure}\\
+\bigskip
+
+\textbf{Reconstructed Images:}
+\\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\linewidth]{figs/globe_5.jpg}
+\end{figure}
+\begin{center}
+    k=5
+\end{center}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\linewidth]{figs/globe_20.jpg}
+\end{figure}
+\begin{center}
+    k=20
+\end{center}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\linewidth]{figs/globe_50.jpg}
+\end{figure}
+\begin{center}
+    k=50
+\end{center}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\linewidth]{figs/globe_100.jpg}
+\end{figure}
+\begin{center}
+    k=100
+\end{center}
+
+
+\subsection{GREYSCALE}
+
+\textbf{Original Image}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\linewidth]{figs/greyscale.png}
+\end{figure}\\
+\bigskip
+
+\textbf{Reconstructed Images:}
+\\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\linewidth]{figs/greyscale_5.png}
+\end{figure}
+\begin{center}
+    k=5
+\end{center}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\linewidth]{figs/greyscale_20.png}
+\end{figure}
+\begin{center}
+    k=20
+\end{center}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\linewidth]{figs/greyscale_50.png}
+\end{figure}
+\begin{center}
+    k=50
+\end{center}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\linewidth]{figs/greyscale_100.png}
+\end{figure}
+\begin{center}
+    k=100
+\end{center}
+
+
+\section{ERROR ANALYSIS}
+\subsection*{EINSTEIN}
+\input{tables/einstein_table}
+\subsection*{GLOBE}
+\input{tables/globe_table}
+\subsection*{GREYSCALE}
+\input{tables/greyscale_table}
+\section{TRADE OFFS AND REFLECTIONS ON IMPLEMENTATION CHOICE}
+\subsection{Algorithm Choice: Classical Jacobi}
+We implemented the \textbf{Classical Jacobi algorithm} from scratch. The primary trade-off here was accepting slower computational performance in exchange for high numerical accuracy and a clear, iterative mechanism that is easier to understand and debug than more complex modern methods.
+\begin{itemize}
+    \item \textbf{Trade-off:} The choice of the Classical Jacobi algorithm prioritized \textbf{simplicity and accuracy} over \textbf{speed}. By iteratively zeroing out off-diagonal elements with straightforward rotations, the method is easy to implement and highly precise for symmetric matrices like $\vec{A}^T\vec{A}$, ensuring numerical stability even for small eigenvalues. However, this comes at the cost of performance, as the algorithm's $O(N^3)$ complexity makes it significantly slower for large images compared to more complex, modern alternatives like QR or Divide and Conquer.
+    \item \textbf{Reflection:} While highly accurate for symmetric matrices like $\vec{A}^T\vec{A}$, its $O(N^3)$ time complexity makes it prohibitively slow for very high-resolution images compared to industry-standard algorithms (e.g., Divide and Conquer or Golub-Kahan).
+\end{itemize}
+
+\subsection{Memory Management in C}
+Our implementation uses manual dynamic memory allocation in C, eventually standardizing on \textbf{flattened 1D arrays} to represent 2D matrices.
+\begin{itemize}
+    \item \textbf{Trade-off:} By manually managing memory, we gain precise control over data layout, which improves cache locality and performance. However, this increases complexity, as it requires manual index arithmetic (e.g., \texttt{A[i*width + j]}) and rigorous error checking to prevent memory leaks or segmentation faults, issues that are automatically handled in higher-level languages.
+    \item \textbf{Reflection:} Provides fine-grained control over memory layout, improving cache locality. However, it introduces significant risks of segmentation faults and memory leaks, requiring rigorous testing and careful indexing logic compared to using high-level languages with automatic garbage collection.
+\end{itemize}
+
+\subsection{Full vs. Approximate SVD}
+We computed the \textbf{full SVD} before truncating to rank $k$.
+\begin{itemize}
+    \item \textbf{Trade-off:} This prioritizes \textbf{exactness} over \textbf{efficiency}. While this approach guarantees precision by calculating all singular values, it is computationally expensive, as many of these values are ultimately discarded. In a production environment for large-scale images, \textbf{Randomized SVD} would be a preferable alternative, offering significant speedups by directly computing only the top-$k$ components at the cost of a negligible approximation error.
+    \item \textbf{Reflection:} This approach is computationally expensive as it calculates all singular values, even those that are eventually discarded. A production system for large images might prefer \textbf{Randomized SVD}, which directly computes only the top-$k$ components, offering massive speedups at the cost of a small approximation error.
+\end{itemize}
+
+\section{CONCLUSION}
+This project successfully demonstrated the application of Singular Value Decomposition (SVD) for image compression. By decomposing an image's matrix into its constituent singular values and vectors, we were able to reconstruct approximations of the image using only a truncated subset of this data.\\
+\bigskip
+
+Our key finding was the direct and quantifiable trade-off between the level of compression and the resulting image quality. This relationship is controlled by the number of singular values, $k$, used for reconstruction:
+\begin{enumerate}
+    \item \textbf{High Compression}(Low $k$): Using a very small $k$ (e.g., $k=10$) resulted in a significant compression ratio, as only a fraction of the original data was needed. However, this came at the cost of severe image degradation, with only the most basic structural elements of the image being preserved.
+    \item \textbf{High Quality}(High $k$): As $k$ was increased, the reconstructed image's fidelity to the original improved dramatically. The largest singular values clearly correspond to the most significant visual information. Smaller, later singular values add finer details, textures, and noise.
+\end{enumerate}
+
+
+\end{document}

@@ -1,0 +1,20 @@
+\documentclass{article}
+\usepackage{booktabs}
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\begin{document}
+\begin{table}[H]
+  \centering
+  \caption{Einstein Reconstruction Error Analysis}
+  \label{tab:einstein_error}
+  \begin{tabular}{ccc}
+    \toprule
+    \textbf{k} & \textbf{Frobenius Norm} & \textbf{Percentage Error (\%)} \\
+    \midrule
+    5          & 4628.676439             & 21.2234               \\
+    20         & 2124.663914             & 9.7420                \\
+    50         & 880.015709              & 4.0350                \\
+    100        & 185.238866              & 0.8494                \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\end{document}
