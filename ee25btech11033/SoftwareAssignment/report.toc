@@ -1,0 +1,29 @@
+\contentsline {section}{\numberline {1}INTRODUCTION}{2}{section.1}%
+\contentsline {section}{\numberline {2}THEORY}{2}{section.2}%
+\contentsline {section}{\numberline {3}SUMMARY OF STRANG'S VIDEO}{2}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Concept}{2}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Geometric Interpretation}{3}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Computation Method}{3}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}The Four Fundamental Subspaces}{3}{subsection.3.4}%
+\contentsline {section}{\numberline {4}IMPLEMENTED ALGORITHM}{3}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Transformation to a Symmetric Problem}{4}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}The Jacobi "Annihilation" Strategy}{4}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Extracting SVD Components}{4}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Image Compression (Truncation)}{5}{subsection.4.4}%
+\contentsline {section}{\numberline {5}PSEUDOCODE}{5}{section.5}%
+\contentsline {section}{\numberline {6}COMPARISON OF DIFFERENT ALGORITHMS}{6}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Jacobi Algorithm}{6}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Power Iteration}{6}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Golub-Kahan-Reinsch (Bidiagonalization + QR)}{7}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Divide and Conquer}{7}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Randomized SVD (rSVD)}{7}{subsection.6.5}%
+\contentsline {section}{\numberline {7}RECONSTRUCTED IMAGES}{8}{section.7}%
+\contentsline {subsection}{\numberline {7.1}EINSTEIN}{8}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}GLOBE}{9}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}GREYSCALE}{11}{subsection.7.3}%
+\contentsline {section}{\numberline {8}ERROR ANALYSIS}{13}{section.8}%
+\contentsline {section}{\numberline {9}TRADE OFFS AND REFLECTIONS ON IMPLEMENTATION CHOICE}{13}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Algorithm Choice: Classical Jacobi}{13}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Memory Management in C}{14}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Full vs. Approximate SVD}{14}{subsection.9.3}%
+\contentsline {section}{\numberline {10}CONCLUSION}{14}{section.10}%

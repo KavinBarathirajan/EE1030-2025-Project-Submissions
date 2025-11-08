@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.3)  8 NOV 2025 23:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.3)  8 NOV 2025 23:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1770,57 +1770,56 @@ Package: inputenc 2024/02/08 v1.3d Input encoding file
 File: latin1.def 2024/02/08 v1.3d Input encoding file
 ))
 Package translations Info: No language package found. I am going to use `englis
-h' as default language. on input line 59.
-LaTeX Font Info:    Trying to load font information for OT1+txr on input line 5
-9.
+h' as default language. on input line 66.
+LaTeX Font Info:    Trying to load font information for OT1+txr on input line 6
+6.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
-)
-No file report.aux.
+) (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 59.
+LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 66.
 LaTeX Font Info:    Trying to load font information for OML+txmi on input line 
-59.
+66.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 66.
 LaTeX Font Info:    Trying to load font information for OMS+txsy on input line 
-59.
+66.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/txfonts/omstxsy.fd
 File: omstxsy.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 66.
 LaTeX Font Info:    Trying to load font information for OMX+txex on input line 
-59.
+66.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/txfonts/omxtxex.fd
 File: omxtxex.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 59.
-LaTeX Font Info:    Trying to load font information for U+txexa on input line 5
-9.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 66.
+LaTeX Font Info:    Trying to load font information for U+txexa on input line 6
+6.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/txfonts/utxexa.fd
 File: utxexa.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1858,15 +1857,15 @@ LaTeX Font Info:    ... okay on input line 59.
 
 \symgns@font=\mathgroup15
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
-(Font)                  TS1/txr/m/n --> TS1/txr/b/n on input line 59.
-Package gensymb Info: Math companion symbols declared on input line 59.
-LaTeX Info: Redefining \degree on input line 59.
-LaTeX Info: Redefining \celsius on input line 59.
+(Font)                  TS1/txr/m/n --> TS1/txr/b/n on input line 66.
+Package gensymb Info: Math companion symbols declared on input line 66.
+LaTeX Info: Redefining \degree on input line 66.
+LaTeX Info: Redefining \celsius on input line 66.
 Package gensymb Info: Using text companion symbols for \degree, \celsius and \p
-erthousand on input line 59.
-LaTeX Info: Redefining \ohm on input line 59.
-Package gensymb Info: Using \textohm for \ohm on input line 59.
-Package gensymb Info: Using \textmu for \micro on input line 59.
+erthousand on input line 66.
+LaTeX Info: Redefining \ohm on input line 66.
+Package gensymb Info: Using \textohm for \ohm on input line 66.
+Package gensymb Info: Using \textmu for \micro on input line 66.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/translations/translations-basic-d
 ictionary-english.trsl
@@ -1874,7 +1873,7 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 59.
+or `english'. on input line 66.
 
 (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1916,13 +1915,15 @@ Package caption Info: longtable package is loaded.
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 59.
+Package hyperref Info: Link coloring OFF on input line 66.
+
+(./report.out) (./report.out)
 \@outlinefile=\write5
 \openout5 = `report.out'.
 
 \c@lstlisting=\count410
 LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <24.88> not available
-(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 63.
+(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 70.
 
 
 [1
@@ -1930,57 +1931,47 @@ LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <24.88> not available
 {/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
 al/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}]
 LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <17.28> not available
-(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 80.
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 81
-.
+(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 86.
+ (./report.toc
+LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <12> not available
+(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 1.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 4.
+
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+txmia on input line 8
-1.
+LaTeX Font Info:    Trying to load font information for U+txmia on input line 4
+.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 81.
-
+LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 81.
-
+LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+txsyc on input line 8
-1.
+LaTeX Font Info:    Trying to load font information for U+txsyc on input line 4
+.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for TS1+txr on input line 8
-1.
+LaTeX Font Info:    Trying to load font information for TS1+txr on input line 4
+.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/txfonts/ts1txr.fd
 File: ts1txr.fd 2000/12/15 v3.1
-)
+))
+\tf@toc=\write6
+\openout6 = `report.toc'.
 
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.92 \bigskip
-             
-? 
-LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <14.4> not available
-(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 98.
-LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <12> not available
-(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 105.
 
 
 
@@ -1988,31 +1979,48 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.115 \end{align}
-                  [1]
+l.87 \newpage
+              [1]
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.100 \bigskip
+              
+? 
+LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <14.4> not available
+(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 106.
+
 
 [2]
 
 [3]
+
+[4]
 LaTeX Font Info:    Trying to load font information for OT1+txtt on input line 
-222.
+214.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/txfonts/ot1txtt.fd
 File: ot1txtt.fd 2000/12/15 v3.1
 )
 
-[4]
-Overfull \hbox (11.60309pt too wide) in paragraph at lines 230--232
+[5]
+
+[6]
+Overfull \hbox (11.60309pt too wide) in paragraph at lines 284--286
 \OT1/txr/m/n/12 The mod-ern de-fault for many high-performance dense lin-ear al
 -ge-bra li-braries (e.g., LA-PACK's \OT1/txtt/m/n/12 dgesdd\OT1/txr/m/n/12 ). 
  []
 
 
 
-[5]
-<figs/einstein.jpg, id=104, 186.6975pt x 182.6825pt>
+[7]
+<figs/einstein.jpg, id=282, 186.6975pt x 182.6825pt>
 File: figs/einstein.jpg Graphic file (type jpg)
 <use figs/einstein.jpg>
-Package pdftex.def Info: figs/einstein.jpg  used on input line 255.
+Package pdftex.def Info: figs/einstein.jpg  used on input line 309.
 (pdftex.def)             Requested size: 145.11053pt x 141.99557pt.
 
 
@@ -2022,41 +2030,41 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.257 \bigskip
+l.311 \bigskip
               
 ? 
-<figs/einstein_5.jpg, id=105, 186.6975pt x 182.6825pt>
+<figs/einstein_5.jpg, id=283, 186.6975pt x 182.6825pt>
 File: figs/einstein_5.jpg Graphic file (type jpg)
 <use figs/einstein_5.jpg>
-Package pdftex.def Info: figs/einstein_5.jpg  used on input line 263.
+Package pdftex.def Info: figs/einstein_5.jpg  used on input line 317.
 (pdftex.def)             Requested size: 145.11053pt x 141.99557pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--264
+Underfull \hbox (badness 10000) in paragraph at lines 313--318
 
  []
 
-<figs/einstein_20.jpg, id=106, 186.6975pt x 182.6825pt>
+<figs/einstein_20.jpg, id=284, 186.6975pt x 182.6825pt>
 File: figs/einstein_20.jpg Graphic file (type jpg)
 <use figs/einstein_20.jpg>
-Package pdftex.def Info: figs/einstein_20.jpg  used on input line 271.
+Package pdftex.def Info: figs/einstein_20.jpg  used on input line 325.
 (pdftex.def)             Requested size: 145.11053pt x 141.99557pt.
-<figs/einstein_50.jpg, id=107, 186.6975pt x 182.6825pt>
+<figs/einstein_50.jpg, id=285, 186.6975pt x 182.6825pt>
 File: figs/einstein_50.jpg Graphic file (type jpg)
 <use figs/einstein_50.jpg>
-Package pdftex.def Info: figs/einstein_50.jpg  used on input line 279.
+Package pdftex.def Info: figs/einstein_50.jpg  used on input line 333.
 (pdftex.def)             Requested size: 145.11053pt x 141.99557pt.
 
 
-[6 <./figs/einstein.jpg> <./figs/einstein_5.jpg> <./figs/einstein_20.jpg>]
-<figs/einstein_100.jpg, id=118, 186.6975pt x 182.6825pt>
+[8 <./figs/einstein.jpg> <./figs/einstein_5.jpg> <./figs/einstein_20.jpg>]
+<figs/einstein_100.jpg, id=294, 186.6975pt x 182.6825pt>
 File: figs/einstein_100.jpg Graphic file (type jpg)
 <use figs/einstein_100.jpg>
-Package pdftex.def Info: figs/einstein_100.jpg  used on input line 287.
+Package pdftex.def Info: figs/einstein_100.jpg  used on input line 341.
 (pdftex.def)             Requested size: 145.11053pt x 141.99557pt.
-<figs/globe.jpg, id=119, 843.15pt x 882.29625pt>
+<figs/globe.jpg, id=295, 843.15pt x 882.29625pt>
 File: figs/globe.jpg Graphic file (type jpg)
 <use figs/globe.jpg>
-Package pdftex.def Info: figs/globe.jpg  used on input line 299.
+Package pdftex.def Info: figs/globe.jpg  used on input line 353.
 (pdftex.def)             Requested size: 145.11053pt x 151.84624pt.
 
 
@@ -2066,44 +2074,44 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.301 \bigskip
+l.355 \bigskip
               
 ? 
-<figs/globe_5.jpg, id=120, 843.15pt x 882.29625pt>
+<figs/globe_5.jpg, id=296, 843.15pt x 882.29625pt>
 File: figs/globe_5.jpg Graphic file (type jpg)
 <use figs/globe_5.jpg>
-Package pdftex.def Info: figs/globe_5.jpg  used on input line 307.
+Package pdftex.def Info: figs/globe_5.jpg  used on input line 361.
 (pdftex.def)             Requested size: 145.11053pt x 151.84624pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 303--308
+Underfull \hbox (badness 10000) in paragraph at lines 357--362
 
  []
 
 
 
-[7 <./figs/einstein_50.jpg> <./figs/einstein_100.jpg> <./figs/globe.jpg>]
-<figs/globe_20.jpg, id=129, 843.15pt x 882.29625pt>
+[9 <./figs/einstein_50.jpg> <./figs/einstein_100.jpg> <./figs/globe.jpg>]
+<figs/globe_20.jpg, id=304, 843.15pt x 882.29625pt>
 File: figs/globe_20.jpg Graphic file (type jpg)
 <use figs/globe_20.jpg>
-Package pdftex.def Info: figs/globe_20.jpg  used on input line 315.
+Package pdftex.def Info: figs/globe_20.jpg  used on input line 369.
 (pdftex.def)             Requested size: 145.11053pt x 151.84624pt.
-<figs/globe_50.jpg, id=130, 843.15pt x 882.29625pt>
+<figs/globe_50.jpg, id=305, 843.15pt x 882.29625pt>
 File: figs/globe_50.jpg Graphic file (type jpg)
 <use figs/globe_50.jpg>
-Package pdftex.def Info: figs/globe_50.jpg  used on input line 323.
+Package pdftex.def Info: figs/globe_50.jpg  used on input line 377.
 (pdftex.def)             Requested size: 145.11053pt x 151.84624pt.
-<figs/globe_100.jpg, id=131, 843.15pt x 882.29625pt>
+<figs/globe_100.jpg, id=306, 843.15pt x 882.29625pt>
 File: figs/globe_100.jpg Graphic file (type jpg)
 <use figs/globe_100.jpg>
-Package pdftex.def Info: figs/globe_100.jpg  used on input line 331.
+Package pdftex.def Info: figs/globe_100.jpg  used on input line 385.
 (pdftex.def)             Requested size: 145.11053pt x 151.84624pt.
 
 
-[8 <./figs/globe_5.jpg> <./figs/globe_20.jpg> <./figs/globe_50.jpg>]
-<figs/greyscale.png, id=139, 1027.84pt x 1027.84pt>
+[10 <./figs/globe_5.jpg> <./figs/globe_20.jpg> <./figs/globe_50.jpg>]
+<figs/greyscale.png, id=314, 1027.84pt x 1027.84pt>
 File: figs/greyscale.png Graphic file (type png)
 <use figs/greyscale.png>
-Package pdftex.def Info: figs/greyscale.png  used on input line 344.
+Package pdftex.def Info: figs/greyscale.png  used on input line 398.
 (pdftex.def)             Requested size: 145.11053pt x 145.10425pt.
 
 
@@ -2113,79 +2121,69 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.346 \bigskip
+l.400 \bigskip
               
 ? 
-<figs/greyscale_5.png, id=140, 1027.84pt x 1027.84pt>
+<figs/greyscale_5.png, id=315, 1027.84pt x 1027.84pt>
 File: figs/greyscale_5.png Graphic file (type png)
 <use figs/greyscale_5.png>
-Package pdftex.def Info: figs/greyscale_5.png  used on input line 352.
+Package pdftex.def Info: figs/greyscale_5.png  used on input line 406.
 (pdftex.def)             Requested size: 145.11053pt x 145.10425pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 348--353
+Underfull \hbox (badness 10000) in paragraph at lines 402--407
 
  []
 
-<figs/greyscale_20.png, id=141, 1027.84pt x 1027.84pt>
+<figs/greyscale_20.png, id=316, 1027.84pt x 1027.84pt>
 File: figs/greyscale_20.png Graphic file (type png)
 <use figs/greyscale_20.png>
-Package pdftex.def Info: figs/greyscale_20.png  used on input line 360.
+Package pdftex.def Info: figs/greyscale_20.png  used on input line 414.
 (pdftex.def)             Requested size: 145.11053pt x 145.10425pt.
 
 
-[9 <./figs/globe_100.jpg> <./figs/greyscale.png (PNG copy)> <./figs/greyscale_5
-.png (PNG copy)>]
-<figs/greyscale_50.png, id=150, 1027.84pt x 1027.84pt>
+[11 <./figs/globe_100.jpg> <./figs/greyscale.png (PNG copy)> <./figs/greyscale_
+5.png (PNG copy)>]
+<figs/greyscale_50.png, id=324, 1027.84pt x 1027.84pt>
 File: figs/greyscale_50.png Graphic file (type png)
 <use figs/greyscale_50.png>
-Package pdftex.def Info: figs/greyscale_50.png  used on input line 368.
+Package pdftex.def Info: figs/greyscale_50.png  used on input line 422.
 (pdftex.def)             Requested size: 145.11053pt x 145.10425pt.
-<figs/greyscale_100.png, id=151, 1027.84pt x 1027.84pt>
+<figs/greyscale_100.png, id=325, 1027.84pt x 1027.84pt>
 File: figs/greyscale_100.png Graphic file (type png)
 <use figs/greyscale_100.png>
-Package pdftex.def Info: figs/greyscale_100.png  used on input line 376.
+Package pdftex.def Info: figs/greyscale_100.png  used on input line 430.
 (pdftex.def)             Requested size: 145.11053pt x 145.10425pt.
  (./tables/einstein_table.tex)
 
-[10 <./figs/greyscale_20.png (PNG copy)> <./figs/greyscale_50.png (PNG copy)> <
+[12 <./figs/greyscale_20.png (PNG copy)> <./figs/greyscale_50.png (PNG copy)> <
 ./figs/greyscale_100.png (PNG copy)>] (./tables/globe_table.tex)
 (./tables/greyscale_table.tex)
-Overfull \hbox (12.4235pt too wide) in paragraph at lines 390--390
+Overfull \hbox (12.4235pt too wide) in paragraph at lines 444--444
 []\OT1/txr/bx/n/17.28 TRADE OFFS AND RE-FLEC-TIONS ON IM-PLE-MEN-TA-TION
  []
 
 
 
-[11]
+[13]
 
-[12]
+[14]
 
-[13] (./report.aux)
+[15] (./report.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `report.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `report.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  78E5CCCC08D5F4D40111716BCF9AC5E3;4724.
+Package rerunfilecheck Info: File `report.out' has not changed.
+(rerunfilecheck)             Checksum: 3DDCFB0D10BA54D25A18CC1A7269FD08;4819.
  ) 
 Here is how much of TeX's memory you used:
- 55669 strings out of 473190
- 1320185 string characters out of 5715801
- 1892692 words of memory out of 5000000
- 77946 multiletter control sequences out of 15000+600000
- 591742 words of font info for 112 fonts, out of 8000000 for 9000
+ 56028 strings out of 473190
+ 1323554 string characters out of 5715801
+ 1952237 words of memory out of 5000000
+ 78251 multiletter control sequences out of 15000+600000
+ 593670 words of font info for 116 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 109i,9n,109p,1196b,1152s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 109i,9n,109p,1196b,2529s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm1
 0.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb>
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/l
@@ -2194,14 +2192,14 @@ xlive/2025/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive/
 2025/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2025/te
 xmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/local/texlive/2025/texmf-dis
 t/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2025/texmf-dist/fonts
-/type1/public/txfonts/txtt.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/
-urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/
-utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pf
-b>
-Output written on report.pdf (14 pages, 2320559 bytes).
+/type1/public/txfonts/txsyc.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1
+/public/txfonts/txtt.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/ti
+mes/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a
+.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on report.pdf (16 pages, 2336525 bytes).
 PDF statistics:
- 258 PDF objects out of 1000 (max. 8388607)
- 185 compressed objects within 2 object streams
- 84 named destinations out of 1000 (max. 500000)
- 184 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 440 PDF objects out of 1000 (max. 8388607)
+ 361 compressed objects within 4 object streams
+ 127 named destinations out of 1000 (max. 500000)
+ 416 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -36,6 +36,13 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 
+\lstset{
+    basicstyle=\ttfamily,
+    mathescape=true,
+    frame=single,           % Draws a box around each listing
+    framesep=5pt,           % internal padding
+    rulecolor=\color{black} % Box color
+}
 
 
 \AddToShipoutPictureBG{%
@@ -76,7 +83,8 @@
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
 \setlength{\intextsep}{10pt} % Space between text and floats
-
+\tableofcontents
+\newpage
 \section{INTRODUCTION}
 This project implements image compression using Singular Value Decomposition (SVD).In this context, a grayscale image is represented as a matrix $\vec{A} \in \mathbb{R}^{m \times n}$, where each entry $a_{ij}$ corresponds to a pixel's intensity (ranging from 0 for black to 255 for white).\\
 \bigskip
@@ -200,6 +208,52 @@ Perfectly reconstructing the image requires all $N$ singular values. However, th
         \vec{A}_{approx} = \sum_{i=1}^{k} \sigma_i \vec{u}_i \vec{v}_i^T
     \end{equation}
 \end{itemize}
+
+\section{PSEUDOCODE}
+\subsection*{Jacobi Algorithm}
+\begin{lstlisting}
+function JacobiEigenvalue(Matrix $A$, size $n$)
+    $B \leftarrow A$
+    $V \leftarrow I_n$
+    repeat
+        Find $(p, q)$ with largest $|B_{pq}|$ ($p \neq q$)
+        if $|B_{pq}| < \text{tol}$ then break
+        Compute $(c, s)$ to annihilate $B_{pq}$
+        $B \leftarrow J^T \cdot B \cdot J$
+        $V \leftarrow V \cdot J$
+    until converged
+    return (diagonal of $B$, $V$)
+end function
+\end{lstlisting}
+
+\subsection*{Truncated SVD}
+\begin{lstlisting}
+function TruncatedSVD(Matrix $A$, rows $m$, cols $n$, rank $k$)
+    $ATA \leftarrow A^T \times A$
+    $(\lambda, V) \leftarrow \text{JacobiEigenvalue}(ATA, n)$
+    
+    for $i \leftarrow 0$ to $n-1$ do $\sigma_i \leftarrow \sqrt{\max(0, \lambda_i)}$
+    Sort $(\sigma_i, v_i)$ descending
+    
+    $\Sigma_k \leftarrow$ diag($\sigma_0, ..., \sigma_{k-1}$)
+    $V_k \leftarrow$ first $k$ columns of $V$
+    
+    Compute $U_k$: columns $u_j \leftarrow \frac{1}{\sigma_j} A v_j$
+    
+    return $U_k \times \Sigma_k \times V_k^T$
+end function
+\end{lstlisting}
+
+\subsection*{Main Procedure}
+\begin{lstlisting}
+procedure Main
+    $Img \leftarrow \text{LoadImage}("\text{file.jpg}")$
+    $A \leftarrow \text{ToDouble}(Img)$
+    $A_k \leftarrow \text{TruncatedSVD}(A, m, n, k=100)$
+    $Img_{out} \leftarrow \text{ToByte}(A_k)$
+    SaveImage("out.jpg", $Img_{out}$)
+end procedure
+\end{lstlisting}
 
 
 \section{COMPARISON OF DIFFERENT ALGORITHMS}
